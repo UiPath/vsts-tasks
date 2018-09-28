@@ -1,5 +1,6 @@
 import path = require('path');
 import tl = require('vsts-task-lib/task');
+import os  = require('os')
 
 var repoRoot: string = tl.getVariable('System.DefaultWorkingDirectory');
 
@@ -19,7 +20,7 @@ var xpTarLocation: string;
 var xpZipLocation: string;
 // 7zip
 var xpSevenZipLocation: string;
-var winSevenZipLocation: string = path.join(__dirname, '7zip/7z.exe');
+var winSevenZipLocation: string = path.join(__dirname, os.arch(), '7zip/7z.exe');
 
 function getSevenZipLocation(): string {
     if (win) {
@@ -143,7 +144,7 @@ export class FailTaskError extends Error {
  * Windows only
  * standard gnu-tar extension formats with recognized auto compression formats
  * https://www.gnu.org/software/tar/manual/html_section/tar_69.html
- *   
+ *
  * Computes the name of the tar to use inside a compressed tar.
  * E.g. foo.tar.gz is expected to have foo.tar inside
  */
