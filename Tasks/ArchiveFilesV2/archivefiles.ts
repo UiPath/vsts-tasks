@@ -20,11 +20,15 @@ var xpTarLocation: string;
 var xpZipLocation: string;
 // 7zip
 var xpSevenZipLocation: string;
-var winSevenZipLocation: string = path.join(__dirname, os.arch(), '7zip/7z.exe');
+
+const  x86architecture = ['arm', 'x32', 'ia32']
 
 function getSevenZipLocation(): string {
     if (win) {
-        return winSevenZipLocation;
+        if(x86architecture.indexOf(os.arch()) > -1) {
+            return path.join(__dirname, 'x86', '7zip/7z.exe');
+        }
+        return path.join(__dirname, 'x64', '7zip/7z.exe');;
     } else {
         if (typeof xpTarLocation == "undefined") {
             xpSevenZipLocation = tl.which('7z', true);

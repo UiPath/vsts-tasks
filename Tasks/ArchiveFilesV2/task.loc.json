@@ -1,9 +1,9 @@
 {
-  "id": "d8b84976-e99a-4b86-b885-4849694435b0",
-  "name": "ArchiveFiles",
+  "id": "7ceb9b1a-ff73-4e47-8831-e3ea3beae7d4",
+  "name": "UiPathArchiveFiles",
   "friendlyName": "ms-resource:loc.friendlyName",
   "description": "ms-resource:loc.description",
-  "author": "Microsoft Corporation",
+  "author": "UiPath",
   "helpMarkDown": "ms-resource:loc.helpMarkDown",
   "category": "Utility",
   "visibility": [
@@ -16,9 +16,9 @@
   ],
   "demands": [],
   "version": {
-    "Major": 2,
-    "Minor": 127,
-    "Patch": 0
+    "Major": 1,
+    "Minor": 0,
+    "Patch": 1
   },
   "groups": [
     {
